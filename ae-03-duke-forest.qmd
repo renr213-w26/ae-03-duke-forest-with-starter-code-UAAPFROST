@@ -73,9 +73,29 @@ Once again, data visualization skills to the rescue!
 ```{r}
 #| label: price-area
 
+ggplot(duke_forest, aes(x = area, y = price, color = year_built)) +
+geom_point() +
+geom_smooth(se = FALSE, color = "black") +
+  labs(
+    y = "Price of Home ($)",
+    x = "Size of Home (Square Feet)",
+    title = "Home Size vs Price", 
+    color = "Year Built"
+  )
+
 ```
 
-Add narrative here...
+-   Claim 1: Larger houses are priced higher.
+
+    Answer: The graph shows that as home sizes increase, homes tend to get more expensive. The trend line shows an upward slope implying that there is a positive relationship between the two variables.
+
+-   Claim 2: Newer houses are priced higher.
+
+    Answer: From the graph we can see very few lightly colored points sitting too high or too low in terms of price. The new homes seem to sit between or in the middle of an expensive and lowerend subset of older homes, thus i would not conclude that newer homes are in fact more expensive.
+
+-   Claim 3: Bigger and more expensive houses tend to be newer ones than smaller and cheaper ones.
+
+    Answer: From the graph I wouldn't come to this conclusion as most homes that are large and expensive seem to be old as shown by the points on the graph. The graph also displays that homes which are small and cheap tend to be older. The newer houses tend to moderately sized and priced when compared to the wide range of prices and sizes for old homes.
 
 ::: callout-important
 Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
